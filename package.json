@@ -1,0 +1,25 @@
+{
+  "name": "js-training",
+  "version": "1.0.0",
+  "description": "js训练、手写js、面试题",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require @babel/register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuan0221/js-training.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuan0221/js-training/issues"
+  },
+  "homepage": "https://github.com/yuan0221/js-training#readme",
+  "devDependencies": {
+    "@babel/core": "^7.23.7",
+    "@babel/preset-env": "^7.23.8",
+    "@babel/register": "^7.23.7",
+    "mocha": "^10.2.0"
+  }
+}
