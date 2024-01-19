@@ -1,0 +1,52 @@
+<script>
+
+  function json2dom(json) {
+
+    function dfs(vdom) {
+      const { tag, attrs, children } = vdom;
+      let dom = document.createElement(tag);
+
+      if (attrs) {
+        for (key of Object.keys(attrs)) {
+          dom.setAttribute(key, attrs[key]);
+        }
+      }
+
+      if (children?.length) {
+        for (child of children) {
+          dom.appendChild(dfs(child));
+        }
+      }
+
+      return dom;
+    }
+
+    return dfs(json);
+  }
+
+
+  // https://github.com/Sunny-117/js-challenges/issues/37#issue-1434218198
+  const json = {
+    tag: 'DIV',
+    attrs: {
+      id: 'app'
+    },
+    children: [
+      {
+        tag: 'SPAN',
+        children: [
+          { tag: 'A', children: [] }
+        ]
+      },
+      {
+        tag: 'SPAN',
+        children: [
+          { tag: 'A', children: [] },
+          { tag: 'A', children: [] }
+        ]
+      }
+    ]
+  }
+  
+  console.log(json2dom(json));
+</script>
