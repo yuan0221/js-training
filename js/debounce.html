@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="btn">按钮</button>
+
+  <script>
+    // 维护一个定时器：每次执行操作时，清除上一次的定时器，然后重新声明一个定时器
+    function debounce(func, wait) {
+      let timeout;
+      
+      return function (...args) {
+        const context = this;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(context, args), wait);
+      };
+    }
+
+    const clickHandler = debounce(() => {
+      console.log('111');
+    }, 500);
+
+    document.getElementById('btn').addEventListener('click', clickHandler);
+    
+  </script>
+</body>
+
+</html>
