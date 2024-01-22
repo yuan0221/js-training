@@ -1,0 +1,18 @@
+<script>
+  function loadImgAsync(url) {
+    return new Promise((resolve, reject) => {
+      let image = new Image();
+      image.src = url;
+
+      image.onload = function () {
+        resolve(image);
+      }
+
+      image.onerror = function () {
+        reject('error');
+      }
+    })
+  }
+
+  loadImgAsync('https://images.pexels.com/photos/2167039/pexels-photo-2167039.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
+</script>
