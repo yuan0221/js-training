@@ -1,3 +1,4 @@
+// 问题：数组去重
 function deduplication(arr) {
   return arr.reduce((acc, cur) => {
     if (!acc.includes(cur)) acc.push(cur);
