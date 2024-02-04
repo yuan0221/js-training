@@ -10,7 +10,7 @@ function abordPromise(promise, time) {
 }
 
 
-const sleep = new Promise(resolve => setTimeout(() => resolve, 3000));
+const sleep = new Promise(resolve => setTimeout(resolve, 3000));
 
 abordPromise(sleep, 1000)
   .then(res => console.log(res))

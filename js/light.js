@@ -1,6 +1,6 @@
 function sleep(time) {
   return new Promise(resolve => {
-    setTimeout(() => resolve, time);
+    setTimeout(resolve, time);
   })
 }
 
