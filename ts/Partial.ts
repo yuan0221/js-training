@@ -12,3 +12,5 @@ type MyPartial<T> = {
 // const foo: Partial<IFoo> = { a: 1 }
 // 等于
 const foo: MyPartial<IFoo> = { a: 1 }
+
+export {}
