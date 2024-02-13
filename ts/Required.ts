@@ -4,7 +4,7 @@ interface IFoo {
 }
 
 type MyRequired<T> = {
-  [p in keyof T]-?: T[p]
+  [P in keyof T]-?: T[P]
 }
 
 // const foo: Required<IFoo> = {
@@ -15,4 +15,6 @@ const foo: MyRequired<IFoo> = {
   a: 2,
   b: 3
 }
+
+export {}
 

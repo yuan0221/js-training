@@ -4,7 +4,7 @@ interface IFoo {
 }
 
 type MyReadonly<T> = {
-  readonly [p in keyof T]: T[p]
+  readonly [P in keyof T]: T[P]
 }
 
 const foo:MyReadonly<IFoo> = {
@@ -12,7 +12,7 @@ const foo:MyReadonly<IFoo> = {
   b: 2
 }
 
-foo.a = 11
+// foo.a = 11 // 报错
 
 export {}
 

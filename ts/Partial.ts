@@ -6,7 +6,7 @@ interface IFoo {
 }
 
 type MyPartial<T> = {
-  [p in keyof T]?: T[p]
+  [P in keyof T]?: T[P]
 }
 
 // const foo: Partial<IFoo> = { a: 1 }
