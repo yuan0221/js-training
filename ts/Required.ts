@@ -1,3 +1,4 @@
+// 将 T 中所有属性变为必选
 interface IFoo {
   a?: number
   b?: number
