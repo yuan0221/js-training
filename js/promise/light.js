@@ -4,9 +4,9 @@ function sleep(time) {
   })
 }
 
-function red() { }
-function yellow() { }
-function green() { }
+function red() { console.log('red') }
+function yellow() { console.log('yellow') }
+function green() { console.log('green') }
 
 async function go() {
   red();
@@ -15,7 +15,7 @@ async function go() {
   await sleep(300);
   green();
   await sleep(500);
-  run();
+  go();
 }
 
 go();
