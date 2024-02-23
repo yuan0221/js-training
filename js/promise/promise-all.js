@@ -3,12 +3,11 @@ function promiseAll(promises) {
     let res = new Array(promises.length).fill(0);
     let count = 0;
 
-    for(let i = 0; i < res.length; i++) {
+    for (let i = 0; i < res.length; i++) {
       let p = promises[i];
       Promise.resolve(p).then(result => {
         res[i] = result;
-        count++;
-        if(count === res.length) resolve(res);
+        if (++count === res.length) resolve(res);
       })
     }
 
@@ -23,8 +22,6 @@ function sleep(time, val) {
 }
 
 const promises = [[1000, '1'], [500, '2'], [300, '3'], [400, '4']]
-  .map(([time, val]) => {
-    return sleep(time, val);
-  })
+  .map(([time, val]) => sleep(time, val))
 
 promiseAll(promises).then(res => console.log(res));
