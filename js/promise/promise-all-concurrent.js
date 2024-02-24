@@ -1,16 +1,15 @@
 function promiseAllWithConcurrent(promises, max) {
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     const res = new Array(promises.length).fill(0);
     let count = 0;
     let index = 0;
 
     function step(i) {
-      if (count === res.length) {
-        resolve(res);
-        return;
-      }
-      if (promises[index]) {
-        promises[index]().then(result => {
+      if (count === res.length) resolve(res);
+
+      const promise = promises[index];
+      if (promise) {
+        promise().then(result => {
           res[i] = result;
           count++;
           step(index);
