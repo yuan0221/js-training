@@ -1,8 +1,9 @@
 function myAllSettled(promises) {
-  let res = [];
-  let count = 0;
 
   return new Promise(resolve => {
+    let res = [];
+    let count = 0;
+
     for (let i = 0; i < promises.length; i++) {
       const promise = promises[i];
 
@@ -15,8 +16,7 @@ function myAllSettled(promises) {
         }
       )
         .finally(() => {
-          count++;
-          if (count === promises.length) resolve(res);
+          if (++count === promises.length) resolve(res);
         })
     }
   })
