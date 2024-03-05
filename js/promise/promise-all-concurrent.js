@@ -5,20 +5,19 @@ function promiseAllWithConcurrent(promises, max) {
     let index = 0;
 
     function step(i) {
-      if (count === res.length) resolve(res);
-
       const p = promises[index];
       if (p) {
-        p().then(result => {
-          res[i] = result;
-        })
-        .catch(error => {
-          res[i] = error;
-        })
-        .finally(() => {
-          count++;
-          step(index);
-        })
+        p()
+          .then(result => {
+            res[i] = result;
+          })
+          .catch(error => {
+            res[i] = error;
+          })
+          .finally(() => {
+            if (++count === res.length) resolve(res);
+            step(index);
+          })
       }
 
       index++;
