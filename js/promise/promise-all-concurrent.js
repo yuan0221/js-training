@@ -7,14 +7,20 @@ function promiseAllWithConcurrent(promises, max) {
     function step(i) {
       if (count === res.length) resolve(res);
 
-      const promise = promises[index];
-      if (promise) {
-        promise().then(result => {
+      const p = promises[index];
+      if (p) {
+        p().then(result => {
           res[i] = result;
+        })
+        .catch(error => {
+          res[i] = error;
+        })
+        .finally(() => {
           count++;
           step(index);
         })
       }
+
       index++;
     }
 
@@ -27,7 +33,7 @@ function promiseAllWithConcurrent(promises, max) {
 function sleep(time, val) {
   return new Promise(resolve => setTimeout(() => {
     resolve(val);
-    console.log(val);
+    console.log(val); // 2 3 1 4
   }, time));
 }
 
@@ -36,5 +42,5 @@ const promises = [[1000, '1'], [500, '2'], [300, '3'], [400, '4']]
     return () => sleep(time, val);
   })
 
-promiseAllWithConcurrent(promises, 2).then(res => console.log(res)); // 2 3 1 4
+promiseAllWithConcurrent(promises, 2).then(res => console.log(res));
 
