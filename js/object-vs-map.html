@@ -1,0 +1,39 @@
+<script>
+  // 简单值 -> 值
+  let obj = {
+    2: 333,
+    1: 111,
+    'aa': 222,
+    [Symbol('bb')]: 333
+  }
+  // object 的 key 运行时不能保证定义对象时的顺序
+  console.log(obj) // {1: 111, 2: 333, aa: 222, Symbol(bb): 333}
+
+  for (let key in obj) {
+    console.log(key, obj[key]); // symbol 作为 key 不能被遍历出来，为啥？？
+  }
+
+
+  // 值 -> 值
+  let map = new Map()
+    .set({ 'key': 'value' }, 111)
+    .set(function () { }, 222)
+    .set([], 222)
+    .set(Symbol('bb'), 222)
+    .set(document.documentElement, 222)
+    .set(new Map([[1, 1]]), 222)
+  // 打印出来的 key 和初始化 map 时 set 的顺序一致
+  console.log(map)
+
+  for (let [key, value] of map.entries()) {
+    console.log(key, value); // 这里的 symbol 作为 key 可以被遍历出来，原因？
+  }
+
+
+
+
+
+
+
+
+</script>
