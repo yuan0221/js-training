@@ -23,11 +23,16 @@ class Person {
   }
 }
 
+function Parent(a) {
+  this.a = a;
+}
+
 // extends可以继承拥有constructor的class，和拥有原型的构造函数
-class Man extends Person {
-  constructor (sex) {
+// class Man extends Person {
+class Man extends Parent {
+  constructor (sex, a) {
     // 调用父类构造函数，并将返回的实例赋值给this
-    super();
+    super(a);
     this.sex = sex;
   }
   jump() {
@@ -35,4 +40,5 @@ class Man extends Person {
   }
 }
 
-const p = new Man('man');
+const p = new Man('man', 111);
+console.log(p)
