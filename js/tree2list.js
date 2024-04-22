@@ -36,16 +36,16 @@ function tree2list(data) {
   let res = [];
 
   function dfs(tree) {
-    for(item of tree) {
-      if(item.children) {
+    for (item of tree) {
+      if (item.children) {
         dfs(item.children);
         delete item.children;
       }
       res.push(item);
     }
-  } 
+  }
 
-  dfs(tree);
+  dfs(data);
 
   return res;
 }
