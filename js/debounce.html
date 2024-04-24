@@ -14,12 +14,13 @@
     // 维护一个定时器：每次执行操作时，清除上一次的定时器，然后重新声明一个定时器
     function debounce(func, wait) {
       let timeout;
-      
+
       return function (...args) {
-        const context = this;
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func.apply(context, args), wait);
-      };
+        clearTimeout(timeout)
+        timeout = setTimeout(function () {
+          func.apply(this, args)
+        }, wait)
+      }
     }
 
     const clickHandler = debounce(() => {
@@ -27,7 +28,7 @@
     }, 500);
 
     document.getElementById('btn').addEventListener('click', clickHandler);
-    
+
   </script>
 </body>
 

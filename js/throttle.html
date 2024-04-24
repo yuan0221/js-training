@@ -16,13 +16,12 @@
       let isThrottle = false;
 
       return function (...args) {
-        const context = this;
         if (!isThrottle) {
-          func.apply(context, args);
-          isThrottle = true;
-          setTimeout(() => isThrottle = false, wait);
+          isThrottle = true
+          func.apply(this, args)
+          setTimeout(() => isThrottle = false, wait)
         }
-      };
+      }
     }
 
     const clickHandler = throttle(() => {
