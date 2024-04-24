@@ -1,17 +1,14 @@
 // https://github.com/Sunny-117/js-challenges/issues/87#issuecomment-1703993681
-function isObject(obj) {
-  return Object.prototype.toString.call(obj) === '[object Object]';
-}
-
 function mergeObject(obj1, obj2) {
   for (let key in obj2) {
-    if (isObject(obj2[key]) && isObject(obj1[key])) {
-      obj1[key] = mergeObject(obj1[key], obj2[key]);
+    if (obj1[key] instanceof Object && obj2[key] instanceof Object) {
+      obj1[key] = mergeObject(obj1[key], obj2[key])
     } else {
-      obj1[key] = obj2[key];
+      obj1[key] = obj2[key]
     }
   }
-  return obj1;
+
+  return obj1
 }
 
 var obj1 = {
