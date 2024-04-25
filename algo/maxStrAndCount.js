@@ -20,7 +20,7 @@ function fn(str) {
 }
 
 
-const str = 'aaabbbccc';
+const str = 'bacaabbbcccc';
 console.log(fn(str));
 
 
