@@ -7,13 +7,12 @@ function fn(arr, target) {
   while (l1 <= l2) {
     let m = l1 + ((l2 - l1) >> 1)
 
-    if (target === arr[m]) {
-      return m
-    }
     if (target > arr[m]) {
       l1 = m + 1
-    } else {
+    } else if (target < arr[m]) {
       l2 = m - 1
+    } else {
+      return m
     }
   }
 
