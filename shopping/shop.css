@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+header .shop-car {
+  display: none;
+  position: fixed;
+  right: 110px;
+}
+
+header .shop-car ul {
+  width: 200px;
+}
+
+header .shop-car ul li{
+  display: flex;
+  justify-content: space-between;
+}
+
+header .shop-car ul li .right-btn {
+  display: flex;
+}
+
+header .shop-car ul li.buy-btn button{
+  display: block;
+  width: 100%;
+}
+
+main {
+  padding: 0px 20px;
+}
+
+main .container {
+  margin-right: -30px;
+  margin-left: -15px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main .container .item {
+  width: 400px;
+  height: 420px;
+  padding: 8px;
+  border: 1px solid #eee;
+  margin: 0px 8px 8px 0;
+}
+
+main .container .item .img-wrap {
+  width: 100%;
+  height: 384px;
+  background-color: #ccc;
+}
+
+main .container .item .text-wrap {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main .container .item .text-wrap h3 {
+  font-size: 16px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+main .container .item .text-wrap .right-btn {
+  min-width: 150px;
+  text-align: right;
+}
+
