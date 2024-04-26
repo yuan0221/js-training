@@ -5,6 +5,7 @@ function fn(arr, target) {
   let l2 = arr.length - 1
 
   while (l1 <= l2) {
+    // let m = l1 + Math.floor((l2 - l1))
     let m = l1 + ((l2 - l1) >> 1)
 
     if (target > arr[m]) {
@@ -19,4 +20,4 @@ function fn(arr, target) {
   return l1
 }
 
-console.log(fn([1, 3, 5, 6], 5))
+console.log(fn([1, 3, 5, 6], 5))  // 2

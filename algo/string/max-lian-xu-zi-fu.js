@@ -1,4 +1,4 @@
-// 题目： 最大连续字符
+// 题目：最大连续字符
 
 function fn(arr) {
   let max = 1

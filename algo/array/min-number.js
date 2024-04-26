@@ -1,7 +1,7 @@
 // 题目： 数组中的最小数字
 
 function minNumber(arr) {
-  let res = Infinity
+  let res = Number.MAX_VALUE
 
   for (item of arr) {
     if (item < res) {

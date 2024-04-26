@@ -1,3 +1,4 @@
+// 题目：最长公共前缀
 function fn(arr) {
   let res = arr[0]
 

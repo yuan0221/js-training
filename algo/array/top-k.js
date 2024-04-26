@@ -12,4 +12,4 @@ function fn(arr, k) {
   return arr.slice(0, k)
 }
 
-console.log(fn([2, 5, 7, 4], 2))
+console.log(fn([2, 5, 7, 4], 2)) // [ 2, 4 ]
